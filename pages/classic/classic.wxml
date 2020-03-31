@@ -1,0 +1,5 @@
+<!--pages/classic/classic.wxml-->
+<view>
+  <!-- 以下是对一个自定义组件的引用 -->
+  <like-cmp></like-cmp>
+</view>
