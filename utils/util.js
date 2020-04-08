@@ -24,9 +24,10 @@ class Http{
     if (!params.method) {
       params.method = "GET"
     }
+    
     wx.request({
       url: config.api_base_url+params.url,
-      type: params.method,
+      method: params.method,
       data:params.data,
       header: {
         'content-type': 'application/json',

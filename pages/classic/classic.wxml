@@ -1,5 +1,13 @@
 <!--pages/classic/classic.wxml-->
-<view>
+<view class="container">
   <!-- 以下是对一个自定义组件的引用 -->
-  <like-cmp></like-cmp>
+  <view class="header">
+    <epsoide-cmp class="epsoide" index="{{classic.index}}"></epsoide-cmp>
+    <like-cmp class="like" bind:like="onLikeTap" like="{{likeStatus==1}}" count="{{likeCount}}"></like-cmp>
+  </view>
+  
+  <movie-cmp hidden="{{classic.type!=100}}" img="{{classic.image}}" content="{{classic.content}}"></movie-cmp>
+  <music-cmp wx:if="{{classic.type==200}}" title="{{classic.title}}" src="{{classic.url}}" img="{{classic.image}}" content="{{classic.content}}"></music-cmp>
+  <essay-cmp hidden="{{classic.type!=300}}" img="{{classic.image}}" content="{{classic.content}}"></essay-cmp>
+  <navi-cmp bind:left="onNext" bind:right="onPrevious" class="navi" first="{{first}}" latest="{{latest}}" title="{{classic.title}}"></navi-cmp>
 </view>

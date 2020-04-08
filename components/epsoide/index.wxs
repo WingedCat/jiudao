@@ -1,0 +1,6 @@
+var calIndex = function (index) {
+  return index<10?'0'+index:index;
+}
+module.exports = {
+  calIndex: calIndex
+};

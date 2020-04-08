@@ -1,6 +1,6 @@
 <!--喜欢按钮组件-->
 <!-- 这是自定义组件的内部WXML结构 -->
-<view class="container" catchtap="onLikeTap">
-  <image src="{{like?yesSrc:noSrc}}"/>
+<view class="container" catchtap="onLike">
+  <image  src="{{like?yesSrc:noSrc}}"/>
   <text>{{count}}</text>
 </view>

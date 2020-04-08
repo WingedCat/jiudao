@@ -1,7 +1,4 @@
 // components/like/index.js
-import {Http} from '../../utils/util.js'
-
-let HttpUtil = new Http();
 
 Component({
   /**
@@ -28,20 +25,18 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onLikeTap: function(event){
+    onLike: function(event){
+      //自定义事件
       let like = this.properties.like;
       let count = this.properties.count;
       count = like?count-1:count+1;
       this.setData({like:!like,count:count});
-      const params = {
-        url:"/classic/latest",
-        method:"GET",
-        data:{},
-        success:(res)=>{
-          console.log(res);
-        }
-      }
-      HttpUtil.request(params);
+      let behavior = this.properties.like ? "like":"cancel";
+      //激活事件
+      this.triggerEvent('like',{
+        behavior:behavior
+      },{}); 
+      
     }
   }
 })
